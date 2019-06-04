@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище InformationModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_group" Type="nvarchar(max)" />
+          <Property Name="name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Paths">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_group" Type="nvarchar(max)" />
+          <Property Name="paths" Type="nvarchar(max)" />
+          <Property Name="link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_group" Type="nvarchar(max)" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="likes" Type="nvarchar(max)" />
+          <Property Name="reposts" Type="nvarchar(max)" />
+          <Property Name="views" Type="nvarchar(max)" />
+          <Property Name="time" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="Хранилище InformationModelContainer">
+          <EntitySet Name="Name" EntityType="Self.Name" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paths" EntityType="Self.Paths" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InformationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Path">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="paths" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="likes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="reposts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="views" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="InformationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Names" EntityType="Self.Name" />
+          <EntitySet Name="Paths" EntityType="Self.Path" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище InformationModelContainer" CdmEntityContainer="InformationEntities">
+          <EntitySetMapping Name="Names">
+            <EntityTypeMapping TypeName="InformationModel.Name">
+              <MappingFragment StoreEntitySet="Name">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_group" ColumnName="id_group" />
+                <ScalarProperty Name="name1" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paths">
+            <EntityTypeMapping TypeName="InformationModel.Path">
+              <MappingFragment StoreEntitySet="Paths">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_group" ColumnName="id_group" />
+                <ScalarProperty Name="paths" ColumnName="paths" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="InformationModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_group" ColumnName="id_group" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="likes" ColumnName="likes" />
+                <ScalarProperty Name="reposts" ColumnName="reposts" />
+                <ScalarProperty Name="views" ColumnName="views" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
