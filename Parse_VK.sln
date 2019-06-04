@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parse_VK", "Parse_VK\Parse_VK.csproj", "{4B2FCAE9-893B-484C-96D5-24081E131E48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseService", "DataBaseService\DataBaseService.csproj", "{4D863272-E02B-4AE0-9DC1-3AA493A2E188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "ClassLibrary1\Library.csproj", "{B9681BCC-8F42-4AB6-AFDF-8E5178879DF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "ClassLibrary1\Library.csproj", "{B9681BCC-8F42-4AB6-AFDF-8E5178879DF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projects", "projects", "{749A62F1-AECE-4DD9-A929-ACD4ACEB8032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B2FCAE9-893B-484C-96D5-24081E131E48} = {749A62F1-AECE-4DD9-A929-ACD4ACEB8032}
+		{4D863272-E02B-4AE0-9DC1-3AA493A2E188} = {749A62F1-AECE-4DD9-A929-ACD4ACEB8032}
+		{B9681BCC-8F42-4AB6-AFDF-8E5178879DF5} = {749A62F1-AECE-4DD9-A929-ACD4ACEB8032}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A36EAE9-05A8-449E-8FAC-F9E08B2511C4}

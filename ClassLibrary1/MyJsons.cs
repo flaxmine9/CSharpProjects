@@ -18,7 +18,6 @@ namespace ClassLibrary1
         public News[] Informations { get; set; }
         
         public MyJsons() { }
-
         public MyJsons(string id_group, string NewsT, News[] newsT)
         {
             News = NewsT;
