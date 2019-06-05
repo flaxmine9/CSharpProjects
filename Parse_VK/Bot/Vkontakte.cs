@@ -196,7 +196,6 @@ namespace Parse_VK
 
             return Url;
         }
-
         public List<string>[] PicturesFromGroups(List<string> id_groups)
         {
             List<int> count = new List<int>();
