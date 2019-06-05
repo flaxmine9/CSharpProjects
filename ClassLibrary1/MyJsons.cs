@@ -59,7 +59,6 @@ namespace ClassLibrary1
             nameGroup = nameGroupsT;           
         }
     }
-
     public class News
     {
         public string Times { get; set; }
@@ -79,7 +78,6 @@ namespace ClassLibrary1
             Views = views[count];
         }      
     }
-
     public class NameGroup
     {
         public string Name { get; set; }
@@ -91,7 +89,6 @@ namespace ClassLibrary1
             Name = name[count];
         }
     }
-
     public class Picture
     {       
         public string path { get; set; }
@@ -121,8 +118,7 @@ namespace ClassLibrary1
                 links.Add("null");
                 path = null;
             }        
-        }
-       
+        }  
         public class Links
         {
             [DataMember(EmitDefaultValue = false)]
@@ -227,7 +223,6 @@ namespace ClassLibrary1
             js3.json = work3;
             js3.save("Path.json");
         }
-
         public List<string>[] ReadFromJson()
         {
             List<string>[] list = new List<string>[8];
@@ -261,7 +256,6 @@ namespace ClassLibrary1
 
             return list;
         }
-
         public List<List<string>> ReadLinks()
         {
             js3 = new Json<Pictures>();
